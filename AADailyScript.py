@@ -107,7 +107,7 @@ def send_all_sections(row):
         today_date = get_today_date()  # Get today's date once to prepend
         
         # Reflection: Format as italics using markdown
-        send_or_patch_to_discord("Reflection", f">>> {row[1].strip()}", message_id=MESSAGE_IDS["Reflection"], date=today_date)
+        send_or_patch_to_discord("Reflections", f">>> {row[1].strip()}", message_id=MESSAGE_IDS["Reflection"], date=today_date)
 
         # Inspiration: Format as a markdown blockquote
         send_or_patch_to_discord("Inspiration", f"> _**{row[2]}**_", message_id=MESSAGE_IDS["Inspiration"], date=today_date)
