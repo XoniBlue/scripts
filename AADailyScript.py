@@ -5,6 +5,7 @@ import sys
 import time
 from io import StringIO
 import threading
+import pytz
 
 # URL of the published CSV file (your provided URL)
 CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT6bsEb4n6bdbtV08L8_X9hGiuUfsKBPiSUtoTqnQ4ImAoXB9rdTACMr6Y10j6UE2htZma0r-Kulp5Q/pub?output=csv'
@@ -14,11 +15,11 @@ DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1330623496362921994/IoJH
 
 # Provided message IDs
 MESSAGE_IDS = {
-    "Reflection": "1330664479784173601",
-    "Inspiration": "1330664485014212730",
-    "Thought": "1330664485739823138",
-    "Meditation": "1330664487681916928",
-    "Prayer": "1330664488747401271"
+    "Reflection": "1330767987363549244",
+    "Inspiration": "1330767992988106783",
+    "Thought": "1330767999258464277",
+    "Meditation": "1330768004597944402",
+    "Prayer": "1330768011187064913"
 }
 
 # Get today's date in 'MMMM dd' format (e.g., January 19)
@@ -88,8 +89,8 @@ def send_or_patch_to_discord(section_title, section_text, message_id, date):
         'content': content
     }
 
-    url = f"{DISCORD_WEBHOOK_URL}"
-    response = requests.post(url, json=payload)
+    url = f"{DISCORD_WEBHOOK_URL}/messages/{message_id}"
+    response = requests.patch(url, json=payload)
     
     # Stop the spinning cursor
     done = True
