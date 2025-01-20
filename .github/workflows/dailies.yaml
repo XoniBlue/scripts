@@ -2,7 +2,7 @@ name: Run Daily Script
 
 on:
   schedule:
-    - cron: '0 5 * * *'  # This means the script will run every day at 5 AM UTC
+    - cron: '34 6 * * *'  # This means the script will run every day at 6:34 AM UTC
   workflow_dispatch:  # Allows manual trigger from the GitHub UI
 
 jobs:
