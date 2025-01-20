@@ -88,8 +88,8 @@ def send_or_patch_to_discord(section_title, section_text, message_id, date):
         'content': content
     }
 
-    url = f"{DISCORD_WEBHOOK_URL}/messages/{message_id}"
-    response = requests.patch(url, json=payload)
+    url = f"{DISCORD_WEBHOOK_URL}"
+    response = requests.post(url, json=payload)
     
     # Stop the spinning cursor
     done = True
