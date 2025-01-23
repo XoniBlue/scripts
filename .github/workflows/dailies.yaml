@@ -29,4 +29,4 @@ jobs:
     # Step 4: Run your Python script
     - name: Run daily script
       run: |
-        python AADailyScript.py  # Replace with the name of your Python script
+        python dailies.py  # Replace with the name of your Python script
