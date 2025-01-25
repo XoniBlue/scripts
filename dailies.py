@@ -33,7 +33,7 @@ def animate_spinner(duration=3):
         sys.stdout.write(f"\r{spinner[i % len(spinner)]} Please wait...    ")
         sys.stdout.flush()
         time.sleep(0.2)
-    sys.stdout.write("\r      dude                    \r")  # Clear the spinner line
+    sys.stdout.write("\r                          \r")  # Clear the spinner line
 
 
 # Function to scrape "Just for Today" reading
